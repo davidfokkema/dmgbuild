@@ -762,6 +762,7 @@ def build_dmg(
         print("DETACHING...")
         print(f"{mount_point=}")
         subprocess.run(["echo", "lsof", f"{mount_point}"])
+        subprocess.run(["lsof", f"{mount_point}"])
         print("LSOF DONE")
 
         ret, output = hdiutil("detach", device, plist=False)
