@@ -759,7 +759,7 @@ def build_dmg(
 
     for tries in range(detach_retries):
         callback({"type": "command::start", "command": "hdiutil::detach"})
-        subprocess.run(f"lsof {mount_point}")
+        subprocess.run(f"/usr/sbin/lsof {mount_point}")
 
         ret, output = hdiutil("detach", device, plist=False)
 
