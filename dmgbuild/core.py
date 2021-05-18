@@ -762,6 +762,7 @@ def build_dmg(
         print("DETACHING...")
         print(f"{mount_point=}")
         subprocess.run(["echo", "lsof", f"{mount_point}"])
+        subprocess.run(["ls", "/Volumes"])
         subprocess.run(["lsof", f"{mount_point}"])
         subprocess.run(["echo", "lsof DONE"])
         print("LSOF DONE")
